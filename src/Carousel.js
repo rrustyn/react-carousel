@@ -24,6 +24,10 @@ import Card from "./Card";
   function goForward() {
     setCurrCardIdx(currCardIdx + 1);
   }
+  
+  function goBackward() {
+    setCurrCardIdx(currCardIdx - 1);
+  }
 
   return (
     <div className="Carousel">
@@ -31,7 +35,7 @@ import Card from "./Card";
       <div className="Carousel-main">
         <i
           className="bi bi-arrow-left-circle"
-          onClick={goForward}
+          onClick={goBackward}
         />
         <Card
           caption={currCard.caption}
