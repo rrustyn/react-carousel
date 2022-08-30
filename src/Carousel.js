@@ -29,13 +29,17 @@ import Card from "./Card";
     setCurrCardIdx(currCardIdx - 1);
   }
 
+  //visibility: hidden
+
   return (
     <div className="Carousel">
       <h1>{title}</h1>
       <div className="Carousel-main">
         <i
-          className="bi bi-arrow-left-circle"
-          onClick={goBackward}
+          className={`bi bi-arrow-left-circle
+          ${currCardIdx === 0 && "hidden"}
+          `}
+          onClick={goBackward} 
         />
         <Card
           caption={currCard.caption}
@@ -44,7 +48,9 @@ import Card from "./Card";
           totalNum={total}
         />
         <i
-          className="bi bi-arrow-right-circle"
+          className={`bi bi-arrow-right-circle
+          ${currCardIdx === (total-1) && "hidden"}
+          `}
           onClick={goForward}
         />
       </div>
